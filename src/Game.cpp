@@ -22,7 +22,9 @@ bool Game::init()
 	character = new sf::Sprite;
 	passport = new sf::Sprite;
 
-
+	animals =[sf::Texture.load(
+		"../Data/Images/Critter Crossing Customs"]
+		passports =
   return true;
 }
 
@@ -33,7 +35,8 @@ void Game::update(float dt)
 
 void Game::render()
 {
-
+	window.draw(character);
+	window.draw(passport);
 }
 
 void Game::mouseClicked(sf::Event event)
@@ -69,7 +72,7 @@ void Game::newAnimal()
 
 	character->setTexture(animals[animal_index], true);
 	character->setScale(1.8, 1.8);
-	character->setPosition(window.getSize().x / 12, window.getSize().y / 12)
+	character->setPosition(window.getSize().x / 12, window.getSize().y / 12);
 
 		passport->setTexture(passports[passport_index]);
 	passport->setScale(0.6, 0.6);

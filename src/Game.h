@@ -27,7 +27,7 @@ class Game
   sf::Texture* passports = new sf::Texture[3];
   sf::Sprite* dragged = nullptr;
 
-
+  sf::Vector2f drag_offset;
   bool passport_accepted;
 	bool  passport_rejected;
 	bool should_accept;
