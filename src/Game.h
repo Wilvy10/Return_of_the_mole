@@ -14,12 +14,23 @@ class Game
   void render();
   void mouseClicked(sf::Event event);
   void keyPressed(sf::Event event);
+  void mouseButtonPressed(sf::Event event);
+  void mouseButtonReleased(sf::Event event);
+	  void newAnimal();
+	  void dragSprite(sf::Sprite* sprite);
 
  private:
   sf::RenderWindow& window;
-  sf::Sprite ball;
-  sf::Texture ball_texture;
+  sf::Sprite* character;
+  sf::Sprite* passport;
+  sf::Texture* animals = new sf::Texture[3];
+  sf::Texture* passports = new sf::Texture[3];
+  sf::Sprite* dragged = nullptr;
 
+
+  bool passport_accepted;
+	bool  passport_rejected;
+	bool should_accept;
 };
 
 #endif // PLATFORMER_GAME_H
