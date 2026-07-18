@@ -26,6 +26,12 @@ class Game
   sf::Texture* animals = new sf::Texture[3];
   sf::Texture* passports = new sf::Texture[3];
   sf::Sprite* dragged = nullptr;
+  sf::Texture elephant;
+  sf::Texture elephantPassport;
+  sf::Texture moose;
+  sf::Texture moosePassport;
+  sf::Texture penguin;
+  sf::Texture penguinPassport;
 
   sf::Vector2f drag_offset;
   bool passport_accepted;

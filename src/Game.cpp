@@ -21,10 +21,25 @@ bool Game::init()
 {
 	character = new sf::Sprite;
 	passport = new sf::Sprite;
-
-	animals =[sf::Texture.load(
-		"../Data/Images/Critter Crossing Customs"]
-		passports =
+	elephant.loadFromFile(
+		"Return_of_the_mole/Data/Images/Critter Crossing Customs/elephant.png");
+	moose.loadFromFile(
+		"../Data/Images/Critter Crossing Customs/moose.png");
+	penguin.loadFromFile(
+		"../Data/Images/Critter Crossing Customs/penguin.png");
+	animals[0] = {elephant};
+	animals[1] = { moose };
+	animals[2] = { penguin };
+	elephantPassport.loadFromFile(
+		"../Data/Images/Critter Crossing Customs/elephant passport.png");
+	moosePassport.loadFromFile(
+		"../Data/Images/Critter Crossing Customs/moose passport.png");
+	penguinPassport.loadFromFile(
+		"../Data/Images/Critter Crossing Customs/penguin passport.png");
+	passports[0] = { elephantPassport };
+	passports[1] = { moosePassport };
+	passports[2] = { penguinPassport };
+	newAnimal();
   return true;
 }
 
@@ -35,8 +50,8 @@ void Game::update(float dt)
 
 void Game::render()
 {
-	window.draw(character);
-	window.draw(passport);
+	window.draw(*character);
+	window.draw(*passport);
 }
 
 void Game::mouseClicked(sf::Event event)
